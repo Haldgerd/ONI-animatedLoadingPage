@@ -6,6 +6,7 @@ $color-primary-oniDarkBlue: hsl(212, 50%, 45%);
 $color-primary-oniSkyBlue: hsl(216, 45%, 43%);
 $color-primary-oniMangeta: hsl(332, 69%, 53%);
 $color-primary-oniBlack: hsl(0, 5%, 13%);
+$color-primary-oniDirtyWhite: hsl(0, 15%, 90%);
 
 
 //font styles
@@ -27,4 +28,77 @@ $color-primary-oniBlack: hsl(0, 5%, 13%);
   padding: 0;
 }
 
+%flex-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+body {
+  @extend %flex-layout;
+  background-color: $color-primary-oniDirtyWhite;
+  position: relative;
+  min-height: 100vh;
+}
+
+main {
+  @extend %flex-layout;
+  flex-flow: column;
+  position: relative;
+
+  .main__image {
+    position: absolute;
+    height: 800px;
+    top: 40px
+
+  }
+
+
+  .main__rectangle {
+    width: 0;
+    height: 0;
+    // create a triangle
+    border-top: 140px solid transparent;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-bottom: 600px solid $color-primary-oniSkyBlue;
+  }
+
+
+  .main__loaders {
+    @extend %flex-layout;
+    margin-top: 2em;
+
+    .main__loader {
+    height: 30px;
+    width: 30px;
+    background-color: $color-primary-oniBlue;
+    }
+
+    .main__loader + .main__loader {
+      margin-left: 1em;
+    }
+  }
+}
+
+
+//squares 
+.menu {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  .menu__square {
+    width: 50px;
+    height: 50px;
+    background-color: $color-primary-oniDarkBlue;
+  }
+
+  .menu__name {
+    writing-mode: vertical-lr;
+    font-weight: bold;
+    font-size: clamp(10px, 2rem, 40px);
+    padding: .3em 0.15em;
+  }
+
+}

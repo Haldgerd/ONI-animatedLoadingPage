@@ -1,0 +1,68 @@
+/* general styles */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main .main__loaders, main, body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: #e9e2e2;
+  position: relative;
+  min-height: 100vh;
+}
+
+main {
+  flex-flow: column;
+  position: relative;
+}
+main .main__image {
+  position: absolute;
+  height: 800px;
+  top: 40px;
+}
+main .main__rectangle {
+  width: 0;
+  height: 0;
+  border-top: 140px solid transparent;
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-bottom: 600px solid #3c649f;
+}
+main .main__loaders {
+  margin-top: 2em;
+}
+main .main__loaders .main__loader {
+  height: 30px;
+  width: 30px;
+  background-color: #317baf;
+}
+main .main__loaders .main__loader + .main__loader {
+  margin-left: 1em;
+}
+
+.menu {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.menu .menu__square {
+  width: 50px;
+  height: 50px;
+  background-color: #396fac;
+}
+.menu .menu__name {
+  writing-mode: vertical-lr;
+  font-weight: bold;
+  font-size: clamp(10px, 2rem, 40px);
+  padding: 0.3em 0.15em;
+}
+
+/*# sourceMappingURL=style.css.map */

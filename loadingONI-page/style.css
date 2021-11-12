@@ -31,18 +31,26 @@ main .main__image {
 main .main__rectangle {
   width: 0;
   height: 0;
-  border-top: 140px solid transparent;
-  border-left: 140px solid transparent;
-  border-right: 140px solid transparent;
+  border-top: 150px solid transparent;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
   border-bottom: 600px solid #3c649f;
 }
 main .main__loaders {
-  margin-top: 2em;
+  margin-top: 2.75em;
 }
 main .main__loaders .main__loader {
   height: 30px;
   width: 30px;
   background-color: #317baf;
+  transition: 0.3s linear;
+  animation: rotateAndChangeColor 1000ms infinite;
+}
+main .main__loaders .squareOne {
+  animation-delay: 1s;
+}
+main .main__loaders .squareTwo {
+  animation-delay: 2s;
 }
 main .main__loaders .main__loader + .main__loader {
   margin-left: 1em;
@@ -63,6 +71,14 @@ main .main__loaders .main__loader + .main__loader {
   font-weight: bold;
   font-size: clamp(10px, 2rem, 40px);
   padding: 0.3em 0.15em;
+}
+
+@keyframes rotateAndChangeColor {
+  to {
+    transform: rotate(270deg);
+    background-color: #da3482;
+    transition: 0.3s linear;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

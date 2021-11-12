@@ -9,17 +9,8 @@ $color-primary-oniBlack: hsl(0, 5%, 13%);
 $color-primary-oniDirtyWhite: hsl(0, 15%, 90%);
 
 
-//font styles
-
-
-//margins, paddings
-
-
-//transitions
-
 
 /* general styles */
-
 *,
 *::after,
 *::before {
@@ -46,11 +37,12 @@ main {
   flex-flow: column;
   position: relative;
 
+
+
   .main__image {
     position: absolute;
-    height: 800px;
-    top: 40px
-
+    top: max(145px, 2vh);
+    height: max(800px, 45vw);
   }
 
 
@@ -67,12 +59,12 @@ main {
 
   .main__loaders {
     @extend %flex-layout;
-    margin-top: 2.75em;
+    margin-top: 3em;
 
     .main__loader {
         // opacity: 0;
-        height: 30px;
-        width: 30px;
+        height: min(40px, 7.5vw);
+        width: min(40px, 7.5vw);
         background-color: $color-primary-oniBlue;
         transition: .3s linear;
         animation: rotateAndChangeColor 1500ms .2s infinite;
@@ -100,10 +92,11 @@ main {
   position: absolute;
   top: 20px;
   left: 20px;
+  width: 30%;
   
   .menu__square {
-    width: 50px;
-    height: 50px;
+    width: min(3em, 200px);
+    height: 3em;
     background-color: $color-primary-oniDarkBlue;
   }
 

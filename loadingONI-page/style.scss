@@ -27,13 +27,16 @@ $color-primary-oniDirtyWhite: hsl(0, 15%, 90%);
 
 body {
   @extend %flex-layout;
+
   background-color: $color-primary-oniDirtyWhite;
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 main {
   @extend %flex-layout;
+
   flex-flow: column;
   position: relative;
 
@@ -41,7 +44,7 @@ main {
 
   .main__image {
     position: absolute;
-    top: max(145px, 2vh);
+    top: 40px;
     height: max(800px, 45vw);
   }
 
@@ -50,15 +53,16 @@ main {
     width: 0;
     height: 0;
     // create a triangle
-    border-top: 150px solid transparent;
-    border-left: 150px solid transparent;
-    border-right: 150px solid transparent;
+    border-top: 160px solid transparent;
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
     border-bottom: 600px solid $color-primary-oniSkyBlue;
   }
 
 
   .main__loaders {
     @extend %flex-layout;
+
     margin-top: 3em;
 
     .main__loader {
@@ -110,6 +114,8 @@ main {
 }
 
 
+
+//animations keyframes
 @keyframes rotateAndChangeColor {
     0%   {
         transform: rotate(0deg);

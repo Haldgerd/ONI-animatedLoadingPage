@@ -17,6 +17,7 @@ body {
   background-color: #e9e2e2;
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 main {
@@ -25,15 +26,15 @@ main {
 }
 main .main__image {
   position: absolute;
-  top: max(145px, 2vh);
+  top: 40px;
   height: max(800px, 45vw);
 }
 main .main__rectangle {
   width: 0;
   height: 0;
-  border-top: 150px solid transparent;
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
+  border-top: 160px solid transparent;
+  border-left: 160px solid transparent;
+  border-right: 160px solid transparent;
   border-bottom: 600px solid #3c649f;
 }
 main .main__loaders {

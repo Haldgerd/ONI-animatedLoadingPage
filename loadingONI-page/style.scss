@@ -14,122 +14,143 @@ $color-primary-oniDirtyWhite: hsl(0, 15%, 90%);
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 %flex-layout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body {
-  @extend %flex-layout;
+    @extend %flex-layout;
 
-  background-color: $color-primary-oniDirtyWhite;
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
+    background-color: $color-primary-oniDirtyWhite;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 main {
-  @extend %flex-layout;
-
-  flex-flow: column;
-  position: relative;
-
-
-
-  .main__image {
-    position: absolute;
-    top: 40px;
-    height: max(800px, 45vw);
-  }
-
-
-  .main__rectangle {
-    width: 0;
-    height: 0;
-    // create a triangle
-    border-top: 160px solid transparent;
-    border-left: 160px solid transparent;
-    border-right: 160px solid transparent;
-    border-bottom: 600px solid $color-primary-oniSkyBlue;
-  }
-
-
-  .main__loaders {
     @extend %flex-layout;
 
-    margin-top: 3em;
+    flex-flow: column;
+    position: relative;
 
-    .main__loader {
-        // opacity: 0;
-        height: min(40px, 7.5vw);
-        width: min(40px, 7.5vw);
-        background-color: $color-primary-oniBlue;
-        transition: .3s linear;
-        animation: rotateAndChangeColor 1500ms .2s infinite;
+
+
+    .main__image {
+        position: absolute;
+        top: min(50px, 10vh);
+        height: max(800px, 45vw);
     }
 
 
-    .squareOne {
-      animation-delay: .65s;
+    .main__rectangle {
+        width: 0;
+        height: 0;
+        // create a triangle
+        border-top: 160px solid transparent;
+        border-left: 160px solid transparent;
+        border-right: 160px solid transparent;
+        border-bottom: 600px solid $color-primary-oniSkyBlue;
     }
 
-    .squareTwo {
-      animation-delay: .99s;
 
-    }
+    .main__loaders {
+        @extend %flex-layout;
 
-    .main__loader + .main__loader {
-      margin-left: 1em;
+        margin-top: 3em;
+
+        .main__loader {
+            // opacity: 0;
+            height: min(40px, 7.5vw);
+            width: min(40px, 7.5vw);
+            background-color: $color-primary-oniBlue;
+            transition: .3s linear;
+            animation: rotateAndChangeColor 1500ms .2s infinite;
+        }
+
+
+        .squareOne {
+            animation-delay: .65s;
+        }
+
+        .squareTwo {
+            animation-delay: .99s;
+
+        }
+
+        .main__loader+.main__loader {
+            margin-left: 1em;
+        }
     }
-  }
 }
 
 
 //squares 
 .menu {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 30%;
-  
-  .menu__square {
-    width: min(3em, 200px);
-    height: 3em;
-    background-color: $color-primary-oniDarkBlue;
-  }
+    @extend %flex-layout;
+    flex-flow: column;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    justify-content: center;
+    align-items: center;
 
-  .menu__name {
-    writing-mode: vertical-lr;
-    font-weight: bold;
-    font-size: clamp(10px, 2rem, 40px);
-    padding: .3em 0.15em;
-  }
+    .menu__square {
+        width: 6vh;
+        height: 6vh;
+        background-color: $color-primary-oniDarkBlue;
+    }
+
+    .menu__name {
+        writing-mode: vertical-lr;
+        font-weight: bold;
+        font-size: clamp(10px, 2rem, 40px);
+        padding: .3em 0em;
+        align-self: baseline;
+        // justify-content: center;
+        // align-items: center;
+    }
 
 }
 
 
 
-//animations keyframes
+//ANIMATIONS keyframes
 @keyframes rotateAndChangeColor {
-    0%   {
+    0% {
         transform: rotate(0deg);
         background-color: $color-primary-oniDarkBlue;
-        border-radius: 0;
     }
-    50%  {
+
+    50% {
         transform: rotate(180deg);
         background-color: $color-primary-oniMangeta;
-        border-radius: 50px;
     }
+
     100% {
         transform: rotate(180deg);
-        border-radius: 0;
     }
-  
+
+}
+
+
+//MEDIA queries
+@media screen and (min-width: 1825px) {
+    main {
+
+        position: relative;
+
+        .main__image {
+            position: absolute;
+            top: -5vh;
+
+        }
+
+    }
 }

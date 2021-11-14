@@ -7,7 +7,7 @@
   padding: 0;
 }
 
-main .main__loaders, main, body {
+.menu, main .main__loaders, main, body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +26,7 @@ main {
 }
 main .main__image {
   position: absolute;
-  top: 40px;
+  top: min(50px, 10vh);
   height: max(800px, 45vw);
 }
 main .main__rectangle {
@@ -58,37 +58,46 @@ main .main__loaders .main__loader + .main__loader {
 }
 
 .menu {
+  flex-flow: column;
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 30%;
+  justify-content: center;
+  align-items: center;
 }
 .menu .menu__square {
-  width: min(3em, 200px);
-  height: 3em;
+  width: 6vh;
+  height: 6vh;
   background-color: #396fac;
 }
 .menu .menu__name {
   writing-mode: vertical-lr;
   font-weight: bold;
   font-size: clamp(10px, 2rem, 40px);
-  padding: 0.3em 0.15em;
+  padding: 0.3em 0em;
+  align-self: baseline;
 }
 
 @keyframes rotateAndChangeColor {
   0% {
     transform: rotate(0deg);
     background-color: #396fac;
-    border-radius: 0;
   }
   50% {
     transform: rotate(180deg);
     background-color: #da3482;
-    border-radius: 50px;
   }
   100% {
     transform: rotate(180deg);
-    border-radius: 0;
+  }
+}
+@media screen and (min-width: 1825px) {
+  main {
+    position: relative;
+  }
+  main .main__image {
+    position: absolute;
+    top: -5vh;
   }
 }
 

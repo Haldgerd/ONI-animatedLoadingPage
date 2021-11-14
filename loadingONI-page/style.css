@@ -26,7 +26,7 @@ main {
 }
 main .main__image {
   position: absolute;
-  top: min(50px, 10vh);
+  top: 40px;
   height: max(800px, 45vw);
 }
 main .main__rectangle {
@@ -45,16 +45,16 @@ main .main__loaders .main__loader {
   width: min(40px, 7.5vw);
   background-color: #317baf;
   transition: 0.3s linear;
-  animation: rotateAndChangeColor 1500ms 0.2s infinite;
+  animation: rotateAndChangeColor 1800ms 0.25s infinite;
 }
 main .main__loaders .squareOne {
-  animation-delay: 0.65s;
+  animation-delay: 0.75s;
 }
 main .main__loaders .squareTwo {
-  animation-delay: 0.99s;
+  animation-delay: 1.1s;
 }
 main .main__loaders .main__loader + .main__loader {
-  margin-left: 1em;
+  margin-left: 1.5em;
 }
 
 .menu {
@@ -62,33 +62,30 @@ main .main__loaders .main__loader + .main__loader {
   position: absolute;
   top: 20px;
   left: 20px;
-  justify-content: center;
-  align-items: center;
 }
 .menu .menu__square {
-  width: 6vh;
-  height: 6vh;
+  width: max(50px, 3vw);
+  height: max(50px, 3vw);
   background-color: #396fac;
 }
 .menu .menu__name {
   writing-mode: vertical-lr;
   font-weight: bold;
-  font-size: clamp(10px, 2rem, 40px);
+  font-size: clamp(2rem, 3vw, 50px);
   padding: 0.3em 0em;
-  align-self: baseline;
 }
 
 @keyframes rotateAndChangeColor {
   0% {
-    transform: rotate(0deg);
+    transform: scale(0);
     background-color: #396fac;
   }
   50% {
-    transform: rotate(180deg);
+    transform: scale(1.2);
     background-color: #da3482;
   }
   100% {
-    transform: rotate(180deg);
+    transform: scale(1);
   }
 }
 @media screen and (min-width: 1825px) {

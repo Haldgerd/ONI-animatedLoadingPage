@@ -6,7 +6,7 @@ $color-primary-oniDarkBlue: hsl(212, 50%, 45%);
 $color-primary-oniSkyBlue: hsl(216, 45%, 43%);
 $color-primary-oniMangeta: hsl(332, 69%, 53%);
 $color-primary-oniBlack: hsl(0, 5%, 13%);
-$color-primary-oniDirtyWhite: hsl(0, 15%, 90%);
+$color-primary-oniDirtyWhite: hsl(200, 4%, 83%);
 
 
 
@@ -79,25 +79,25 @@ main {
 
         .main__loader {
             // opacity: 0;
-            height: min(40px, 7.5vw);
-            width: min(40px, 7.5vw);
+            height: min(45px, 7.5vw);
+            width: min(45px, 7.5vw);
             background-color: $color-primary-oniBlue;
             transition: .3s linear;
-            animation: rotateAndChangeColor 1800ms .25s infinite;
+            animation: rotateAndChangeColor 1500ms .95s infinite;
         }
 
 
         .squareOne {
-            animation-delay: .75s;
+            animation-delay: 1.4s;
         }
 
         .squareTwo {
-            animation-delay: 1.1s;
+            animation-delay: 1.9s;
 
         }
 
         .main__loader+.main__loader {
-            margin-left: 1.5em;
+            margin-left: 1.1em;
         }
     }
 }
@@ -150,18 +150,14 @@ main {
 
 
 @keyframes rotateAndChangeColor {
-    0% {
+    from {
         transform: scale(0);
         background-color: $color-primary-oniDarkBlue;
     }
 
-    50% {
-        transform: scale(1.2);
-        background-color: $color-primary-oniMangeta;
-    }
-
-    100% {
+    to {
         transform: scale(1);
+        background-color: $color-primary-oniMangeta;
     }
 
 }

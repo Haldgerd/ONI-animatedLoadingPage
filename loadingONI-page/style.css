@@ -14,7 +14,7 @@
 }
 
 body {
-  background-color: #e9e2e2;
+  background-color: #d2d4d5;
   position: relative;
   min-height: 100vh;
   overflow: hidden;
@@ -41,20 +41,20 @@ main .main__loaders {
   margin-top: 3em;
 }
 main .main__loaders .main__loader {
-  height: min(40px, 7.5vw);
-  width: min(40px, 7.5vw);
+  height: min(45px, 7.5vw);
+  width: min(45px, 7.5vw);
   background-color: #317baf;
   transition: 0.3s linear;
-  animation: rotateAndChangeColor 1800ms 0.25s infinite;
+  animation: rotateAndChangeColor 1500ms 0.95s infinite;
 }
 main .main__loaders .squareOne {
-  animation-delay: 0.75s;
+  animation-delay: 1.4s;
 }
 main .main__loaders .squareTwo {
-  animation-delay: 1.1s;
+  animation-delay: 1.9s;
 }
 main .main__loaders .main__loader + .main__loader {
-  margin-left: 1.5em;
+  margin-left: 1.1em;
 }
 
 .menu {
@@ -76,16 +76,13 @@ main .main__loaders .main__loader + .main__loader {
 }
 
 @keyframes rotateAndChangeColor {
-  0% {
+  from {
     transform: scale(0);
     background-color: #396fac;
   }
-  50% {
-    transform: scale(1.2);
-    background-color: #da3482;
-  }
-  100% {
+  to {
     transform: scale(1);
+    background-color: #da3482;
   }
 }
 @media screen and (min-width: 1825px) {
